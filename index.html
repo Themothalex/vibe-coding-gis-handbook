@@ -6,115 +6,115 @@
     <title>Vibe Coding in GIS — A Handbook for Designers</title>
     <meta name="description" content="A handbook introducing vibe coding as a method for spatial analysis and expressive cartography in GIS. By Haozhuo Yang.">
 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Mono:wght@300;400&display=swap" rel="stylesheet">
-
     <!-- Plausible Analytics (uncomment and replace with your domain) -->
     <!-- <script defer data-domain="yoursite.com" src="https://plausible.io/js/script.js"></script> -->
 
     <style>
+        @font-face {
+            font-family: 'Krungthep';
+            src: url('assets/Krungthep.ttf') format('truetype');
+            font-weight: 400;
+            font-style: normal;
+            font-display: swap;
+        }
+
         :root {
             --pink: #C4877A;
-            --pink-dark: #B07568;
-            --pink-deep: #9C6358;
+            --pink-light: #d4a59b;
+            --black: #111111;
             --white: #FAFAF8;
-            --black: #1A1A1A;
         }
 
         * { margin: 0; padding: 0; box-sizing: border-box; }
         html { scroll-behavior: smooth; }
 
         body {
-            background: var(--pink);
-            color: var(--white);
-            font-family: 'DM Mono', monospace;
+            font-family: 'Krungthep', 'Futura', 'Avenir', 'Helvetica Neue', sans-serif;
             -webkit-font-smoothing: antialiased;
+            background: var(--black);
         }
 
-        .hero {
-            min-height: 100vh;
+        /* ===== PINK LAYER — fixed behind ===== */
+        .pink-layer {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100vh;
+            background: var(--pink);
+            z-index: 1;
+            display: flex;
+            align-items: center;
+            padding: 0 6vw;
+            gap: 5vw;
+        }
+
+        .cover-side {
+            flex-shrink: 0;
+        }
+
+        .cover-side img {
+            width: 30vw;
+            max-width: 380px;
+            min-width: 200px;
+            display: block;
+            box-shadow: 0 30px 80px rgba(0,0,0,0.25), 0 8px 30px rgba(0,0,0,0.1);
+        }
+
+        .title-side {
             display: flex;
             flex-direction: column;
-            align-items: center;
             justify-content: center;
-            padding: 4rem 2rem;
-            position: relative;
-        }
-
-        .hero img {
-            width: 320px;
-            box-shadow: 0 30px 80px rgba(0,0,0,0.2), 0 8px 30px rgba(0,0,0,0.1);
-            opacity: 0;
-            transform: translateY(20px);
-            animation: fadeUp 1s ease forwards 0.2s;
-        }
-
-        .scroll-hint {
-            position: absolute;
-            bottom: 2.5rem;
-            font-size: 0.65rem;
-            letter-spacing: 0.15em;
-            text-transform: uppercase;
-            color: var(--white);
-            opacity: 0;
-            animation: fadeUp 1s ease forwards 0.8s;
-        }
-
-        .title-section {
-            padding: 8rem 2rem;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            text-align: center;
         }
 
         .title-main {
-            font-family: 'DM Serif Display', Georgia, serif;
-            font-size: clamp(3rem, 10vw, 9rem);
+            font-size: clamp(2.8rem, 7vw, 7.5rem);
             font-weight: 400;
             line-height: 0.95;
-            letter-spacing: -0.03em;
+            letter-spacing: -0.02em;
             color: var(--white);
-            margin-bottom: 2rem;
+            margin-bottom: 0.3em;
         }
 
         .title-sub {
-            font-family: 'DM Mono', monospace;
-            font-size: clamp(0.7rem, 1.2vw, 0.9rem);
-            font-weight: 300;
-            letter-spacing: 0.2em;
-            text-transform: uppercase;
-            color: var(--white);
-            opacity: 0.6;
+            font-size: clamp(1.2rem, 3.5vw, 4rem);
+            font-weight: 400;
+            line-height: 1;
+            color: var(--black);
+            opacity: 0.55;
+            margin-bottom: 2rem;
         }
 
         .buttons {
-            padding: 2rem 2rem 8rem;
             display: flex;
-            justify-content: center;
-            gap: 1.2rem;
+            gap: 1rem;
             flex-wrap: wrap;
         }
 
         .btn {
             display: inline-flex;
             align-items: center;
-            gap: 0.6rem;
-            padding: 0.9rem 2rem;
+            gap: 0.5rem;
+            padding: 0.75rem 1.8rem;
             border-radius: 100px;
-            font-family: 'DM Mono', monospace;
-            font-size: 0.72rem;
+            font-family: 'Krungthep', 'Futura', 'Avenir', sans-serif;
+            font-size: clamp(0.6rem, 1vw, 0.78rem);
             font-weight: 400;
-            letter-spacing: 0.08em;
+            letter-spacing: 0.06em;
             text-transform: uppercase;
             text-decoration: none;
             transition: all 0.3s ease;
         }
 
+        .btn svg {
+            width: 14px;
+            height: 14px;
+            flex-shrink: 0;
+        }
+
         .btn-primary {
             background: var(--white);
-            color: var(--pink-deep);
+            color: var(--pink);
             border: 1.5px solid var(--white);
         }
 
@@ -126,147 +126,209 @@
         .btn-secondary {
             background: transparent;
             color: var(--white);
-            border: 1.5px solid rgba(255,255,255,0.4);
+            border: 1.5px solid rgba(255,255,255,0.45);
         }
 
         .btn-secondary:hover {
             border-color: var(--white);
         }
 
-        .btn svg {
-            width: 14px;
-            height: 14px;
-            flex-shrink: 0;
+        /* ===== SPACER — pushes black layer down ===== */
+        .spacer {
+            height: 100vh;
+            position: relative;
+            z-index: 0;
         }
 
-        .questions {
-            padding: 6rem 2rem;
-            border-top: 1px solid rgba(255,255,255,0.15);
-            max-width: 720px;
+        /* ===== BLACK LAYER — scrolls up over pink ===== */
+        .black-layer {
+            position: relative;
+            z-index: 2;
+            background: var(--black);
+            min-height: 100vh;
+        }
+
+        .black-inner {
+            max-width: 680px;
             margin: 0 auto;
+            padding: 8rem 2rem 4rem;
         }
 
-        .questions p {
-            font-family: 'DM Serif Display', Georgia, serif;
-            font-size: clamp(1.4rem, 3vw, 2rem);
-            line-height: 1.4;
-            color: var(--white);
+        .brief {
+            font-size: clamp(0.95rem, 1.6vw, 1.2rem);
+            line-height: 1.75;
+            color: var(--pink);
             font-weight: 400;
-            margin-bottom: 1.5rem;
-            opacity: 0.85;
+            margin-bottom: 2rem;
         }
 
-        .questions p:last-child { margin-bottom: 0; }
-
-        .details {
-            padding: 4rem 2rem;
-            border-top: 1px solid rgba(255,255,255,0.15);
-            max-width: 900px;
-            margin: 0 auto;
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 2rem;
+        .brief + .brief {
+            margin-top: 0;
         }
 
-        .details-label {
+        .divider {
+            width: 40px;
+            height: 1px;
+            background: var(--pink);
+            opacity: 0.3;
+            margin: 3.5rem 0;
+        }
+
+        .small-section {
+            margin-bottom: 2.5rem;
+        }
+
+        .small-label {
             font-size: 0.55rem;
-            letter-spacing: 0.18em;
+            letter-spacing: 0.2em;
             text-transform: uppercase;
-            color: var(--white);
-            opacity: 0.4;
-            margin-bottom: 0.5rem;
+            color: var(--pink);
+            opacity: 0.45;
+            margin-bottom: 0.6rem;
         }
 
-        .details-value {
-            font-size: 0.68rem;
-            line-height: 1.7;
-            color: var(--white);
+        .small-text {
+            font-size: 0.75rem;
+            line-height: 1.8;
+            color: var(--pink);
             opacity: 0.7;
-            font-weight: 300;
+            font-weight: 400;
         }
 
-        .details-value a {
-            color: var(--white);
+        .small-text em { font-style: italic; }
+
+        .small-text a {
+            color: var(--pink);
             text-decoration: none;
-            border-bottom: 1px solid rgba(255,255,255,0.3);
+            border-bottom: 1px solid rgba(196,135,122,0.3);
             transition: border-color 0.3s ease;
         }
 
-        .details-value a:hover { border-color: var(--white); }
-        .details-value em { font-style: italic; }
+        .small-text a:hover {
+            border-color: var(--pink);
+        }
 
         .bottom {
-            padding: 2rem 2rem 3rem;
             text-align: center;
+            padding: 3rem 2rem 4rem;
         }
 
         .bottom span {
-            font-size: 0.55rem;
-            letter-spacing: 0.1em;
-            color: var(--white);
-            opacity: 0.3;
+            font-size: 0.5rem;
+            letter-spacing: 0.12em;
+            color: var(--pink);
+            opacity: 0.25;
         }
 
-        @keyframes fadeUp {
-            to { opacity: 1; transform: translateY(0); }
+        .bottom a {
+            color: var(--pink);
+            text-decoration: none;
         }
 
-        @media (max-width: 600px) {
-            .hero img { width: 240px; }
-            .title-section { padding: 5rem 1.5rem; }
-            .buttons { padding: 2rem 1.5rem 5rem; flex-direction: column; align-items: center; }
-            .btn { width: 100%; max-width: 300px; justify-content: center; }
-            .details { grid-template-columns: 1fr; gap: 1.5rem; }
-            .questions { padding: 4rem 1.5rem; }
+        /* ===== RESPONSIVE ===== */
+        @media (max-width: 768px) {
+            .pink-layer {
+                flex-direction: column;
+                justify-content: center;
+                align-items: flex-start;
+                padding: 3rem 2rem;
+                gap: 2rem;
+            }
+
+            .cover-side img {
+                width: 50vw;
+                max-width: 220px;
+            }
+
+            .title-main {
+                font-size: 2.4rem;
+            }
+
+            .title-sub {
+                font-size: 1.2rem;
+            }
+
+            .buttons {
+                flex-direction: column;
+            }
+
+            .btn {
+                width: fit-content;
+            }
+
+            .black-inner {
+                padding: 5rem 1.5rem 3rem;
+            }
         }
     </style>
 </head>
 <body>
 
-<section class="hero">
-    <img src="assets/cover.jpg" alt="Vibe Coding in GIS — Cover">
-    <span class="scroll-hint">Scroll</span>
-</section>
-
-<section class="title-section">
-    <h1 class="title-main">Vibe Coding<br>in GIS</h1>
-    <p class="title-sub">A Handbook for Designers</p>
-</section>
-
-<section class="buttons">
-    <a href="https://github.com/themothalex/vibe-coding-gis-handbook/releases/latest/download/Vibe-Coding-in-GIS.pdf"
-       class="btn btn-primary"
-       onclick="if(typeof plausible !== 'undefined') plausible('Download', {props: {file: 'handbook-pdf'}})">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/>
-        </svg>
-        Download PDF
-    </a>
-    <a href="https://github.com/themothalex/vibe-coding-gis-handbook"
-       class="btn btn-secondary" target="_blank" rel="noopener">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 00-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0020 4.77 5.07 5.07 0 0019.91 1S18.73.65 16 2.48a13.38 13.38 0 00-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 005 4.77a5.44 5.44 0 00-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 009 18.13V22"/>
-        </svg>
-        Workshop Data
-    </a>
-</section>
-
-<section class="details">
-
-    <div>
-        <p class="details-label">Citation</p>
-        <p class="details-value"><em>Yang, Haozhuo. Vibe Coding in GIS: A Handbook for Designers. 2026.</em></p>
+<!-- PINK LAYER — stays fixed -->
+<section class="pink-layer">
+    <div class="cover-side">
+        <img src="assets/cover.jpg" alt="Vibe Coding in GIS — Cover">
     </div>
-    <div>
-        <p class="details-label">License</p>
-        <p class="details-value"><a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank" rel="noopener">CC BY-NC-SA 4.0</a></p>
+    <div class="title-side">
+        <h1 class="title-main">Vibe Coding in GIS</h1>
+        <p class="title-sub">A Handbook for Designers</p>
+        <div class="buttons">
+            <a href="https://github.com/themothalex/vibe-coding-gis-handbook/releases/latest/download/Vibe-Coding-in-GIS.pdf"
+               class="btn btn-primary"
+               onclick="if(typeof plausible !== 'undefined') plausible('Download', {props: {file: 'handbook-pdf'}})">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/>
+                </svg>
+                Download PDF
+            </a>
+            <a href="https://github.com/themothalex/vibe-coding-gis-handbook"
+               class="btn btn-secondary" target="_blank" rel="noopener">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 00-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0020 4.77 5.07 5.07 0 0019.91 1S18.73.65 16 2.48a13.38 13.38 0 00-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 005 4.77a5.44 5.44 0 00-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 009 18.13V22"/>
+                </svg>
+                Workshop Data
+            </a>
+        </div>
     </div>
-
 </section>
 
-<div class="bottom">
-    <span>© 2026 Haozhuo Yang</span>
-</div>
+<!-- SPACER — holds space for the fixed pink layer -->
+<div class="spacer"></div>
+
+<!-- BLACK LAYER — scrolls up over the pink -->
+<section class="black-layer">
+    <div class="black-inner">
+
+        <p class="brief">
+            This handbook introduces vibe coding as a method for spatial analysis and expressive cartography in GIS. It is written for designers, planners, and researchers who work with spatial data but do not have programming backgrounds.
+        </p>
+        <p class="brief">
+            Based on "Experimental Cartography: Vibe Coding for GIS," a J-Term course taught by the author at the Harvard Graduate School of Design in January 2026.
+        </p>
+
+        <div class="divider"></div>
+
+        <div class="small-section">
+            <p class="small-label">Author</p>
+            <p class="small-text">Haozhuo Yang<br>MA Urban Design, Harvard Graduate School of Design</p>
+        </div>
+
+        <div class="small-section">
+            <p class="small-label">Citation</p>
+            <p class="small-text"><em>Yang, Haozhuo. Vibe Coding in GIS: A Handbook for Designers. 2026.</em></p>
+        </div>
+
+        <div class="small-section">
+            <p class="small-label">License</p>
+            <p class="small-text"><a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank" rel="noopener">Creative Commons BY-NC-SA 4.0</a></p>
+        </div>
+
+    </div>
+
+    <div class="bottom">
+        <span>© 2026 Haozhuo Yang · Font made from <a href="http://www.onlinewebfonts.com" target="_blank" rel="noopener">Online Web Fonts</a> licensed by CC BY 4.0</span>
+    </div>
+</section>
 
 </body>
 </html>
