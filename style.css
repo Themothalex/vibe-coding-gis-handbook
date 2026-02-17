@@ -1,0 +1,241 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    line-height: 1.6;
+    color: #1a1a1a;
+    background-color: #fafafa;
+}
+
+.container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 60px 40px;
+}
+
+/* Book Section */
+.book-section {
+    display: grid;
+    grid-template-columns: 300px 1fr;
+    gap: 60px;
+    margin-bottom: 80px;
+}
+
+.cover-container {
+    position: sticky;
+    top: 40px;
+    height: fit-content;
+}
+
+.book-cover {
+    width: 100%;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+    border-radius: 2px;
+}
+
+.book-info h1 {
+    font-size: 2.5rem;
+    font-weight: 600;
+    letter-spacing: -0.02em;
+    margin-bottom: 8px;
+}
+
+.subtitle {
+    font-size: 1.25rem;
+    color: #666;
+    margin-bottom: 24px;
+}
+
+.author {
+    font-size: 1.1rem;
+    font-weight: 500;
+    margin-bottom: 4px;
+}
+
+.affiliation {
+    font-size: 0.95rem;
+    color: #666;
+    margin-bottom: 32px;
+}
+
+.description {
+    font-size: 1rem;
+    color: #444;
+    margin-bottom: 16px;
+    max-width: 540px;
+}
+
+/* Buttons */
+.cta-buttons {
+    display: flex;
+    gap: 16px;
+    margin-top: 32px;
+    margin-bottom: 32px;
+}
+
+.btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 14px 24px;
+    font-size: 1rem;
+    font-weight: 500;
+    text-decoration: none;
+    border-radius: 6px;
+    transition: all 0.2s ease;
+}
+
+.btn-primary {
+    background-color: #1a1a1a;
+    color: #fff;
+}
+
+.btn-primary:hover {
+    background-color: #333;
+}
+
+.btn-secondary {
+    background-color: #fff;
+    color: #1a1a1a;
+    border: 1px solid #ddd;
+}
+
+.btn-secondary:hover {
+    background-color: #f5f5f5;
+    border-color: #ccc;
+}
+
+.btn-icon {
+    font-size: 1.1rem;
+}
+
+/* Meta Info */
+.meta-info {
+    margin-top: 24px;
+}
+
+.meta-info p {
+    font-size: 0.85rem;
+    color: #888;
+    margin-bottom: 4px;
+}
+
+/* Contents Section */
+.contents-section {
+    margin-bottom: 60px;
+}
+
+.contents-section h2 {
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin-bottom: 24px;
+    padding-bottom: 12px;
+    border-bottom: 1px solid #eee;
+}
+
+.toc {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+}
+
+.toc-item {
+    display: flex;
+    align-items: baseline;
+    gap: 12px;
+}
+
+.toc-number {
+    font-size: 0.85rem;
+    color: #999;
+    font-weight: 500;
+    min-width: 20px;
+}
+
+.toc-title {
+    font-size: 0.95rem;
+    color: #444;
+}
+
+/* Citation Section */
+.citation-section {
+    margin-bottom: 60px;
+}
+
+.citation-section h2 {
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin-bottom: 16px;
+}
+
+.citation-box {
+    background-color: #f5f5f5;
+    padding: 20px 24px;
+    border-radius: 6px;
+    overflow-x: auto;
+}
+
+.citation-box code {
+    font-family: 'SF Mono', Monaco, monospace;
+    font-size: 0.9rem;
+    color: #333;
+}
+
+/* Footer */
+footer {
+    padding-top: 40px;
+    border-top: 1px solid #eee;
+    text-align: center;
+}
+
+footer p {
+    font-size: 0.9rem;
+    color: #888;
+}
+
+footer a {
+    color: #666;
+    text-decoration: none;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .container {
+        padding: 40px 24px;
+    }
+
+    .book-section {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+
+    .cover-container {
+        position: static;
+        max-width: 250px;
+        margin: 0 auto;
+    }
+
+    .book-info h1 {
+        font-size: 2rem;
+    }
+
+    .cta-buttons {
+        flex-direction: column;
+    }
+
+    .btn {
+        justify-content: center;
+    }
+
+    .toc {
+        grid-template-columns: 1fr;
+    }
+}

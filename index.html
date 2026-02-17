@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vibe Coding in GIS: A Handbook for Designers</title>
+    <meta name="description" content="A handbook on AI-assisted spatial analysis for designers, planners, and researchers. By Haozhuo Yang.">
+    <meta name="author" content="Haozhuo Yang">
+
+    <!-- Open Graph / Social Sharing -->
+    <meta property="og:title" content="Vibe Coding in GIS: A Handbook for Designers">
+    <meta property="og:description" content="AI-assisted spatial analysis for designers, planners, and researchers.">
+    <meta property="og:image" content="https://vibe-coding-gis.haozhuoyang.com/images/cover.jpg">
+    <meta property="og:url" content="https://vibe-coding-gis.haozhuoyang.com">
+    <meta property="og:type" content="book">
+
+    <!-- Google Analytics 4 -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-XXXXXXXXXX');
+    </script>
+
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+<main class="container">
+    <div class="book-section">
+        <div class="cover-container">
+            <img src="images/cover.jpg" alt="Vibe Coding in GIS Book Cover" class="book-cover">
+        </div>
+
+        <div class="book-info">
+            <h1>Vibe Coding in GIS</h1>
+            <p class="subtitle">A Handbook for Designers</p>
+            <p class="author">Haozhuo Yang</p>
+            <p class="affiliation">Harvard Graduate School of Design</p>
+
+            <p class="description">
+                This handbook introduces vibe coding as a method for spatial analysis — describing operations in natural language and letting AI generate the code. It covers spatial analysis workflows, expressive cartography, and building reusable tools, with hands-on workshops using ArcGIS Pro.
+            </p>
+
+            <p class="description">
+                Based on "Experimental Cartography: Vibe Coding for GIS," a J-Term course taught at Harvard GSD in January 2026.
+            </p>
+
+            <div class="cta-buttons">
+                <a href="Vibe_Coding_in_GIS.pdf" class="btn btn-primary" onclick="trackDownload()">
+                    <span class="btn-icon">↓</span>
+                    Download PDF
+                </a>
+                <a href="https://github.com/haozhuoyang/vibe-coding-gis" class="btn btn-secondary" target="_blank">
+                    <span class="btn-icon">⟠</span>
+                    GitHub Repository
+                </a>
+            </div>
+
+            <div class="meta-info">
+                <p class="version">Version 1.0 · February 2026</p>
+                <p class="license">Released under CC BY-NC 4.0</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="contents-section">
+        <h2>Contents</h2>
+        <div class="toc">
+            <div class="toc-item">
+                <span class="toc-number">1</span>
+                <span class="toc-title">Introduction</span>
+            </div>
+            <div class="toc-item">
+                <span class="toc-number">2</span>
+                <span class="toc-title">Spatial Analysis with Vibe Coding</span>
+            </div>
+            <div class="toc-item">
+                <span class="toc-number">3</span>
+                <span class="toc-title">Expressive Cartography</span>
+            </div>
+            <div class="toc-item">
+                <span class="toc-number">4</span>
+                <span class="toc-title">Building Reusable Tools</span>
+            </div>
+            <div class="toc-item">
+                <span class="toc-number">5</span>
+                <span class="toc-title">Limitations and Risks</span>
+            </div>
+            <div class="toc-item">
+                <span class="toc-number">6</span>
+                <span class="toc-title">Case Study: Teaching at Harvard GSD</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="citation-section">
+        <h2>Citation</h2>
+        <div class="citation-box">
+            <code>Yang, Haozhuo. <em>Vibe Coding in GIS: A Handbook for Designers</em>. 2026. https://vibe-coding-gis.haozhuoyang.com</code>
+        </div>
+    </div>
+
+    <footer>
+        <p>© 2026 Haozhuo Yang · <a href="mailto:hyang@haozhuoyang.com">Contact</a></p>
+    </footer>
+</main>
+
+<script>
+    function trackDownload() {
+        gtag('event', 'download', {
+            'event_category': 'PDF',
+            'event_label': 'Vibe Coding in GIS Handbook',
+            'value': 1
+        });
+    }
+</script>
+</body>
+</html>
