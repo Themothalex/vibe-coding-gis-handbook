@@ -30,7 +30,6 @@ The `workshop-data/` folder contains the ArcGIS Pro project package used in the 
 2. Double-click to open in ArcGIS Pro (version 3.0 or later)
 3. All layers will load automatically into your Contents pane
 
-See `workshop-data/data-dictionary.md` for complete field descriptions.
 
 ## Contents
 
@@ -68,6 +67,3 @@ This work is licensed under [CC BY-NC-SA 4.0](https://creativecommons.org/licens
 
 You are free to share and adapt this material with attribution, for non-commercial purposes, under the same license.
 
-## Contact
-
-Haozhuo Yang — [your email] — [your website]
