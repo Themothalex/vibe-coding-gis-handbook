@@ -16,9 +16,9 @@ Based on "Experimental Cartography: Vibe Coding for GIS," a J-Term course taught
 
 ## Download
 
-📄 **[Download the Handbook (PDF)](https://github.com/YOUR_USERNAME/vibe-coding-gis-handbook/releases/latest)**
+📄 **[Download the Handbook (PDF)](https://github.com/themothalex/vibe-coding-gis-handbook/releases/latest)**
 
-🌐 **[Project Page](https://yoursite.com/vibe-coding-gis)**
+🌐 **[Project Page](https://vibe-coding-gis.haozhuoyang.com/)**
 
 ## Workshop Data
 
