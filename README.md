@@ -57,7 +57,7 @@ BibTeX:
   author    = {Yang, Haozhuo},
   year      = {2026},
   note      = {Based on a course taught at Harvard Graduate School of Design},
-  url       = {https://yoursite.com/vibe-coding-gis}
+  url       = {https://vibe-coding-gis.haozhuoyang.com/}
 }
 ```
 
