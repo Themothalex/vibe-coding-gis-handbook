@@ -26,7 +26,7 @@ The `workshop-data/` folder contains the ArcGIS Pro project package used in the 
 
 ### Setup
 
-1. Download `Manhattan_Workshop.ppkx` from the `workshop-data/` folder
+1. Download `manhattan_data.ppkx` from the `workshop-data/` folder
 2. Double-click to open in ArcGIS Pro (version 3.0 or later)
 3. All layers will load automatically into your Contents pane
 
