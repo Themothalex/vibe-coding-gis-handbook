@@ -2,6 +2,8 @@
 
 **Haozhuo Yang**, M.Arch in Urban Design, Harvard Graduate School of Design
 
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.18704614.svg)](https://doi.org/10.5281/zenodo.18704614)
+
 ![Cover](assets/cover.jpg)
 
 ---
@@ -47,7 +49,7 @@ The `workshop-data/` folder contains the ArcGIS Pro project package used in the 
 
 If you use this handbook in teaching, research, or practice, please cite:
 
-> Yang, Haozhuo. *Vibe Coding in GIS: A Handbook for Designers.* 2026.
+> Yang, Haozhuo. *Vibe Coding in GIS: A Handbook for Designers.* 2026. https://doi.org/10.5281/zenodo.18704614
 
 BibTeX:
 
@@ -56,6 +58,7 @@ BibTeX:
   title     = {Vibe Coding in GIS: A Handbook for Designers},
   author    = {Yang, Haozhuo},
   year      = {2026},
+  doi       = {10.5281/zenodo.18704614}
   note      = {Based on a course taught at Harvard Graduate School of Design},
   url       = {https://vibe-coding-gis.haozhuoyang.com/}
 }
